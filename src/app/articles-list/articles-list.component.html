@@ -1,0 +1,25 @@
+<div class="articles-list-header">
+  <h1>{{title}}</h1>
+  <div id='main-menu'>
+      <ul>
+          <li *ngFor="let source of sources">
+              <input class='source-checkbox' type='radio' id='{{source.id}}' (click)="getArticles(source.id)"/><label for='{{source.id}}'>{{source.name}}</label>
+          </li>
+          </ul>
+  </div>
+  <div id='news-container'>Please Select Sources</div>
+<div>
+
+</div>
+<ul>
+  <li *ngFor="let item of articles">
+    <div class='article'>
+      <div class='article-header'><h2>{{item.title}}</h2></div>
+      <div class='article-body'> <a href='{{item.url}}' target='_blank'>{{item.imageUrl}}</a> {{item.description}}</div>
+      <div class='article-footer'> 
+        {{item.creationDate}}
+          <a href='https://newsapi.org' target='_blank'>Powered by NewsAPI.org</a>
+      </div>
+  </div>
+  </li>
+</ul>

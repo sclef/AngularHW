@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import $ from "jquery";
+import { HttpClient } from '@angular/common/http';
 
-@Component({
-  selector: 'app-utils',
-  templateUrl: './utils.component.html',
-  styleUrls: ['./utils.component.scss']
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule
+  ]
 })
-export class UtilsComponent implements OnInit {
-
-  constructor () { }
-
-  ngOnInit() {
-  }
-
+export class UtilsModule { 
+  constructor(private http: HttpClient) { }
   async sendRequestForJson(urls, callbackFunction) {
-    await urls.map(async (url) => { await this.proxyFetch(url, callbackFunction); });
+    //return this.http.get(this.configUrl);
+    let response=await urls.map(async (url) => { await this.http.get(url); });
+    return response;
   }
 
   async proxyFetch(url, callbackFunction) {

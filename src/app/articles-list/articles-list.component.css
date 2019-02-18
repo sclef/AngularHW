@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+
+.appName {
+    float: left;
+    font-size: 35px;
+    font-weight: 600;
+    font-family: cursive;
+    text-align:center
+  }
+
+.source-title {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: cursive;
+    text-align:center;
+    min-height: 35px;
+  }
+
+.articles-list-header select {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 6px;
+    text-decoration: none;
+    font-size: 13px; 
+    line-height: 25px;
+    border-radius: 4px;
+  }
+
+  .articles-list-header button {
+    color: black;
+    padding: 1px;
+    margin: 3px;
+  }
+
+  #main-menu{
+    height: 400px;
+    width:fit-content;
+    overflow: auto;
+    display: flex;
+}
+
+#main-menu div{
+    width: 220px;
+}

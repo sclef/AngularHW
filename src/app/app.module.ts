@@ -3,24 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SourcesComponent } from './sources/sources.component';
-import { ArticlesComponent } from './articles/articles.component';
-import { UtilsComponent } from './utils/utils.component';
-import { ConstantsComponent } from './constants/constants.component';
+import { ArticleService } from './models';
+import { SourceService } from './models';
+import { ConstantsModule } from './core/constants/constants.module';
+import { UtilsModule } from './core/utils/utils.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SourcesComponent,
-    ArticlesComponent,
-    UtilsComponent,
-    ConstantsComponent
+    AppComponent
   ],
   imports: [
+    //FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ConstantsModule,
+    UtilsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ArticleService, SourceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
